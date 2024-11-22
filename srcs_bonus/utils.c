@@ -40,15 +40,16 @@ void	display_error_bn(int c, int *numbers)
 	exit(EXIT_FAILURE);
 }
 
-void	display_error2_bn(int *numbers, t_stack *stack_a)
+void	display_error2_bn(int *numbers, t_stack *stack_a, t_stack *stack_b)
 {
 	write(2, "Error\n", 6);
 	free(numbers);
-	free(stack_a);
+	free_stack_bn(stack_a);
+	free_stack_bn(stack_b);
 	exit(EXIT_FAILURE);
 }
 
-void	open_inst(t_stack *stack_a, t_stack *stack_b)
+int	open_inst(t_stack *stack_a, t_stack *stack_b)
 {
 	char	*line;
 
@@ -56,8 +57,12 @@ void	open_inst(t_stack *stack_a, t_stack *stack_b)
 	{
 		line = get_next_line(0);
 		if (line == NULL)
-			break ;
-		instructions(stack_a, stack_b, line);
+			return (0);
+		if (instructions(stack_a, stack_b, line) == 1)
+		{
+			free(line);
+			return (1);
+		}
 		free(line);
 	}
 }

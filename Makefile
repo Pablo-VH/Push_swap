@@ -21,7 +21,8 @@ SRCS_FILES		= push_swap.c parse.c insertion_sort.c sort.c clean.c \
 	
 BONUS_DIR    	= srcs_bonus/
 OBJS_BONUS_DIR	= objs_bonus/
-BONUS_FILES		= call_inst.c check_errors.c instructions.c main.c utils.c check_errors2.c \
+BONUS_FILES		= call_inst.c check_errors.c instructions.c main.c utils.c \
+				check_errors2.c call_inst2.c instructions2.c \
 
 OBJS_FILES			= $(SRCS_FILES:.c=.o)
 
@@ -58,7 +59,9 @@ $(PRINTF):
 	@echo "\nCompiling $(BLUE)printf$(DEF_COLOR)"
 	@make -sC $(PRINTF_DIR)
 
-bonus: $(LIBFT) $(PRINTF) $(OBJS_BONUS) 
+bonus: $(NAME_BONUS)
+
+$(NAME_BONUS): $(LIBFT) $(PRINTF) $(OBJS_BONUS) 
 	@echo "\nCompiling $(BLUE)$(NAME_BONUS)$(DEF_COLOR)"
 	@$(CC) $(CFLAGS) $(OBJS_BONUS) $(LDFLAGS) -o $(NAME_BONUS)
 	@echo "\n$(GREEN)$(NAME_BONUS) compiled!$(DEF_COLOR)"

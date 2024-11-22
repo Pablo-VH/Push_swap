@@ -100,11 +100,6 @@ int	main(int argc, char **argv)
 	if (check_dup_bn(numbers, count))
 		display_error_bn(2, numbers);
 	init_stack_bn(&stack_a, &stack_b, numbers, count);
-	open_inst(&stack_a, &stack_b);
-	if (!is_sorted_bn(&stack_a))
-		display_error2_bn(numbers, &stack_a);
-	ft_printf("Ok\n");
-	free(numbers);
-	free_stack_bn(&stack_a);
+	init_inst(&stack_a, &stack_b, numbers);
 	return (EXIT_SUCCESS);
 }

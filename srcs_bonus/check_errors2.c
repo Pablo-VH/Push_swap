@@ -40,3 +40,12 @@ int	str_isdigit_bn(char *argv)
 	}
 	return (1);
 }
+
+void	display_error3_bn(int *numbers, t_stack *stack_a, t_stack *stack_b)
+{
+	write(2, "KO\n", 3);
+	free(numbers);
+	free_stack_bn(stack_a);
+	free_stack_bn(stack_b);
+	exit(EXIT_FAILURE);
+}

@@ -83,9 +83,9 @@ void	init_inst(t_stack *stack_a, t_stack *stack_b, int *numbers)
 	if (content_stack(stack_a) == 0)
 		display_error2_bn(numbers, stack_a, stack_b);
 	if (!is_sorted_bn(stack_a))
-		display_error2_bn(numbers, stack_a, stack_b);
+		display_error3_bn(numbers, stack_a, stack_b);
 	if (content_stack(stack_b) == 1)
-		display_error2_bn(numbers, stack_a, stack_b);
+		display_error3_bn(numbers, stack_a, stack_b);
 	ft_printf("OK\n");
 	free(numbers);
 	free_stack_bn(stack_a);

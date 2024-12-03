@@ -51,6 +51,7 @@ void	check_range_bn(char **s_numbers, int *numbers);
 void	init_stack_bn(t_stack *stack_a, t_stack *stack_b, int *nb, int count);
 void	display_error_bn(int c, int *numbers);
 void	display_error2_bn(int *numbers, t_stack *stack_a, t_stack *stack_b);
+void	display_error3_bn(int *numbers, t_stack *stack_a, t_stack *stack_b);
 void	free_2d_bn(char **str);
 void	free_stack_bn(t_stack *stack);
 void	init_inst(t_stack *stack_a, t_stack *stack_b, int *numbers);
